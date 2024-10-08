@@ -1,0 +1,11 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "isCreatingSolution": true,
+    "environment": "onprem19",
+    "version": "1.10.0",
+    "libraryName": "anonymous-api-2",
+    "libraryId": "e7bacf66-3232-4534-a273-0f5f6e4502fa",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
