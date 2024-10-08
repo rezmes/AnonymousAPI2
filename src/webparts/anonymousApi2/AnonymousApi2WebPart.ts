@@ -13,6 +13,8 @@ import { IAnonymousApi2Props } from './components/IAnonymousApi2Props';
 
 export interface IAnonymousApi2WebPartProps {
   description: string;
+  apiURL: string;
+  userID: string;
 }
 
 export default class AnonymousApi2WebPart extends BaseClientSideWebPart<IAnonymousApi2WebPartProps> {
@@ -21,7 +23,10 @@ export default class AnonymousApi2WebPart extends BaseClientSideWebPart<IAnonymo
     const element: React.ReactElement<IAnonymousApi2Props > = React.createElement(
       AnonymousApi2,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        context: this.context,
+        apiURL: this.properties.apiURL,
+        userID: this.properties.userID
       }
     );
 
@@ -49,6 +54,12 @@ export default class AnonymousApi2WebPart extends BaseClientSideWebPart<IAnonymo
               groupFields: [
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
+                }),
+                PropertyPaneTextField('apiURL', {
+                  label: "New API URL"
+                }),
+                PropertyPaneTextField('userID', {
+                  label:"user ID"
                 })
               ]
             }
